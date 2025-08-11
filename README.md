@@ -38,7 +38,7 @@ Example: runTest() defines setup → executeTest → verify → teardown; subcla
 
 --------------
 
-Pattern Name: Strategy Pattern
+2. Pattern Name: Strategy Pattern
 
 Purpose: Select an algorithm/implementation at runtime
 
@@ -54,7 +54,7 @@ Example: DriverStrategy interface with ChromeDriverStrategy, FirefoxDriverStrate
 
 --------------
 
-Pattern Name: Observer Pattern
+3. Pattern Name: Observer Pattern
 
 Purpose: Notify multiple listeners when a subject changes
 
@@ -70,124 +70,104 @@ Example: Test execution triggers events → listeners send logs, screenshots, an
 
 --------------
 
-Category: Creational
+B. Category: Creational
 --------------
 
-Pattern: Singleton Pattern
+1. Pattern: Singleton Pattern
+
 Definition: Ensure only one instance of a class exists
-Applications:
 
-Managing single WebDriver instance per test thread
+Uses:
 
-Maintaining a single database connection
+- Managing single WebDriver instance per test thread
 
-Centralized config manager
+- Maintaining a single database connection
+
+- Centralized config manager
+
 Example: DriverManager.getInstance() always returns same driver for a thread
 
-Category: Creational
-Pattern: Factory Pattern
+--------------
+
+2. Pattern: Factory Pattern
+
 Definition: Create objects without exposing creation logic
+
 Applications:
 
-Generating driver instances based on browser type
+- Generating driver instances based on browser type
 
-Creating API request builders for different HTTP methods
+- Creating API request builders for different HTTP methods
 
-Data provider objects from different sources
+- Data provider objects from different sources
+
 Example: DriverFactory.getDriver("chrome") returns Chrome WebDriver
 
-Category: Structural
-Pattern: Page Object Model (POM)
+--------------
+
+C. Category: Structural
+--------------
+
+1. Pattern: Page Object Model (POM)
+
 Definition: Encapsulate UI elements and actions into objects
+
 Applications:
 
-Maintaining reusable UI components
+- Maintaining reusable UI components
 
-Reducing code duplication in Selenium scripts
+- Reducing code duplication in Selenium scripts
 
-Easier maintenance when UI changes
+- Easier maintenance when UI changes
+  
 Example: LoginPage.login(username, password) instead of locating elements in every test
 
-Category: Structural
-Pattern: Data-Driven Framework (Integration)
+--------------
+
+2. Pattern: Data-Driven Framework (Integration)
+
 Definition: Separate test logic from test data
+
 Applications:
 
-Running same test with multiple datasets
+- Running same test with multiple datasets
 
-Externalizing test data (Excel, CSV, JSON, DB)
+- Externalizing test data (Excel, CSV, JSON, DB)
 
-Easy parameterization for CI pipelines
+- Easy parameterization for CI pipelines
+  
 Example: @DataProvider in TestNG reads from Excel, test executes for each row
 
-Category: Structural
-Pattern: Decorator Pattern
+--------------
+
+3. Pattern: Decorator Pattern
+   
 Definition: Dynamically add responsibilities to objects
+
 Applications:
 
-Adding logging around WebDriver actions
+- Adding logging around WebDriver actions
 
-Wrapping API requests with retry logic
+- Wrapping API requests with retry logic
 
-Adding wait mechanisms to existing page methods
+- Adding wait mechanisms to existing page methods
+  
 Example: LoggingDriver wraps WebDriver methods and logs before/after action
 
-Category: Structural
-Pattern: Page Object Model (POM)
+--------------
+
+4. Pattern: Page Object Model (POM)
+   
 Purpose: Encapsulate UI elements and actions into objects
+
 Applications:
 
-Maintaining reusable UI components
+- Maintaining reusable UI components
 
-Reducing code duplication in Selenium scripts
+- Reducing code duplication in Selenium scripts
 
-Easier maintenance when UI changes
+- Easier maintenance when UI changes
+  
 Example: LoginPage.login(username, password) instead of locating elements in every test
 
-Category: Structural
-Pattern: Data-Driven Framework (Integration)
-Purpose: Separate test logic from test data
-Applications:
-
-Running same test with multiple datasets
-
-Externalizing test data (Excel, CSV, JSON, DB)
-
-Easy parameterization for CI pipelines
-Example: @DataProvider in TestNG reads from Excel, test executes for each row
-
-Category: Structural
-Pattern: Decorator Pattern
-Purpose: Dynamically add responsibilities to objects
-Applications:
-
-Adding logging around WebDriver actions
-
-Wrapping API requests with retry logic
-
-Adding wait mechanisms to existing page methods
-Example: LoggingDriver wraps WebDriver methods and logs before/after action
-
-Category: Creational
-Pattern: Singleton Pattern
-Purpose: Ensure only one instance of a class exists
-Applications:
-
-Managing single WebDriver instance per test thread
-
-Maintaining a single database connection
-
-Centralized config manager
-Example: DriverManager.getInstance() always returns same driver for a thread
-
-Category: Creational
-Pattern: Factory Pattern
-Purpose: Create objects without exposing creation logic
-Applications:
-
-Generating driver instances based on browser type
-
-Creating API request builders for different HTTP methods
-
-Data provider objects from different sources
-Example: DriverFactory.getDriver("chrome") returns Chrome WebDriver
+--------------
