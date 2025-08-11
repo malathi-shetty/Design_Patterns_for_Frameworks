@@ -19,43 +19,60 @@ Patterns Implemented:
 
 Highlights
 
-Category: Behavioral
-Pattern Name: Template Method Pattern
+A. Category: Behavioral
+--------------
+
+1. Pattern Name: Template Method Pattern
+
 Purpose: Define a fixed test flow while allowing subclasses to change specific steps
-SDET Uses:
 
-Standardizing setup/teardown in TestNG/JUnit base classes
+Uses:
 
-UI/API hybrid frameworks with fixed flow but variable execution
+- Standardizing setup/teardown in TestNG/JUnit base classes
 
-Regression templates with different verification logic
+- UI/API hybrid frameworks with fixed flow but variable execution
+
+- Regression templates with different verification logic
+
 Example: runTest() defines setup → executeTest → verify → teardown; subclasses override only executeTest() & verify()
 
-Category: Behavioral
+--------------
+
 Pattern Name: Strategy Pattern
+
 Purpose: Select an algorithm/implementation at runtime
-SDET Uses:
 
-Switching between Chrome, Firefox, Edge drivers
+Uses:
 
-Choosing between API and UI test execution
+- Switching between Chrome, Firefox, Edge drivers
 
-Selecting data parsing logic (CSV, JSON, Excel)
+- Choosing between API and UI test execution
+
+- Selecting data parsing logic (CSV, JSON, Excel)
+
 Example: DriverStrategy interface with ChromeDriverStrategy, FirefoxDriverStrategy; DriverManager picks based on config
 
-Category: Behavioral
+--------------
+
 Pattern Name: Observer Pattern
+
 Purpose: Notify multiple listeners when a subject changes
-SDET Uses:
 
-Reporting updates to multiple dashboards
+Uses:
 
-Logging test events to console, file, and Allure at once
+- Reporting updates to multiple dashboards
 
-Parallel test status notifications
+- Logging test events to console, file, and Allure at once
+
+- Parallel test status notifications
+
 Example: Test execution triggers events → listeners send logs, screenshots, and metrics simultaneously
 
+--------------
+
 Category: Creational
+--------------
+
 Pattern: Singleton Pattern
 Definition: Ensure only one instance of a class exists
 Applications:
