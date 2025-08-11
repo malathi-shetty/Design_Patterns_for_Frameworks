@@ -70,6 +70,22 @@ Example: Test execution triggers events → listeners send logs, screenshots, an
 
 --------------
 
+4. Pattern Name: Chain of Responsibility Pattern
+   
+Purpose: Pass a request through a chain of handlers until one processes it
+
+Uses:
+
+- Chained validators for UI fields, API response checks, and preconditions
+
+- Sequential rule-based validations before test execution
+
+- Conditional request filtering in API automation
+  
+Example: ValidationHandler chain → UIValidator → APIValidator → DataValidator → stops when one fails
+
+--------------
+
 B. Category: Creational
 --------------
 
@@ -102,6 +118,22 @@ Applications:
 - Data provider objects from different sources
 
 Example: DriverFactory.getDriver("chrome") returns Chrome WebDriver
+
+--------------
+
+3. Pattern Name: Builder Pattern
+
+Purpose: Construct complex objects step-by-step without directly instantiating them
+
+Uses:
+
+- Building complex API requests (JSON/XML) in RestAssured
+
+- Creating test data objects with multiple optional fields
+
+- Configuring WebDriver options fluently
+  
+Example: UserBuilder.setName("John").setAge(30).setRole("Admin").build()
 
 --------------
 
@@ -155,3 +187,19 @@ Applications:
 Example: LoggingDriver wraps WebDriver methods and logs before/after action
 
 --------------
+
+4. Pattern Name: Facade Pattern
+   
+Purpose: Provide a simplified interface to complex subsystems
+
+Uses:
+
+- Single class to trigger Selenium + API + DB checks
+
+- Unified test launcher for multi-tool execution (Selenium, RestAssured, JDBC)
+
+- Wrapping multiple report generators behind one call
+  
+Example: TestFacade.runFullTest() internally calls UI test, API test, DB verification
+--------------
+
