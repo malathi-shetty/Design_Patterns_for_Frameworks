@@ -5,21 +5,17 @@ This project demonstrates Java + Maven implementations of key design patterns ta
 Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
 
 Patterns Implemented:
-| -------------- | ----------------------- | ------------------------------------------------- |
 | Category       | Pattern Name            | Example SDET Use Case                             |
 | -------------- | ----------------------- | ------------------------------------------------- |
 | **Creational** | Singleton Pattern       | Centralized WebDriver management                  |
 |                | Builder Pattern         | Flexible test data creation                       |
 |                | Factory Method Pattern  | Cross-browser WebDriver creation                  |
-| -------------- | ----------------------- | ------------------------------------------------- |
 | **Structural** | Page Object Pattern     | Encapsulating UI interactions                     |
 |                | Facade Pattern          | Simplified high-level test flows                  |
-| -------------- | ----------------------- | ------------------------------------------------- |
 | **Behavioral** | Strategy Pattern        | Switchable login & verification strategies        |
 |                | Observer Pattern        | Test event logging & reporting                    |
 |                | Chain of Responsibility | Chained validators for UI, API, and preconditions |
 |                | Template Method Pattern | Standardized test flow via base test classes      |
-| -------------- | ----------------------- | ------------------------------------------------- |
 
 Highlights
 1️⃣ Chain of Responsibility Pattern
