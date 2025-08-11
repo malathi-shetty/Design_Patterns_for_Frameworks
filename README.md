@@ -155,19 +155,3 @@ Applications:
 Example: LoggingDriver wraps WebDriver methods and logs before/after action
 
 --------------
-
-4. Pattern: Page Object Model (POM)
-   
-Purpose: Encapsulate UI elements and actions into objects
-
-Applications:
-
-- Maintaining reusable UI components
-
-- Reducing code duplication in Selenium scripts
-
-- Easier maintenance when UI changes
-  
-Example: LoginPage.login(username, password) instead of locating elements in every test
-
---------------
