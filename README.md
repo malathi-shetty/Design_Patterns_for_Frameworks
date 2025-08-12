@@ -5,7 +5,7 @@
 - Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
 
 
-### Design Pattern Mapping in SDET Framework
+### Design Pattern Mapping in Framework
 
 
                      ┌─────────────────────────┐
