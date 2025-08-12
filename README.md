@@ -1,8 +1,8 @@
 # Design_Patterns_for_Frameworks
 
 `Overview:`
-This project demonstrates Java + Maven implementations of key design patterns tailored for SDET and Test Automation.
-Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
+- This project demonstrates Java + Maven implementations of key design patterns tailored for Test Automation.
+- Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
 
 `Patterns Implemented:`
 ----------
