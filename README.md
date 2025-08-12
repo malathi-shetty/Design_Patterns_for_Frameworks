@@ -9,7 +9,7 @@ Each pattern is applied to real-world testing scenarios — from Selenium UI tes
 
 # Selenium Design Patterns & Framework Approaches for SDET
 
-| **Category**     | **Pattern / Framework Name** | **Example SDET Use Case** |
+| **Category**     | **Pattern / Framework Name** | **Example Use Case** |
 |------------------|-----------------------------|---------------------------|
 | **Creational**   | Singleton Pattern            | Centralized WebDriver management to ensure a single driver instance across tests |
 |                  | Builder Pattern              | Flexible creation of complex test data (e.g., dynamic JSON payloads for API tests) |
@@ -23,7 +23,7 @@ Each pattern is applied to real-world testing scenarios — from Selenium UI tes
 |                  | Chain of Responsibility      | Creating chained validators for UI checks, API checks, and DB validation before test execution |
 |                  | Template Method Pattern      | Defining a standard execution flow in a base test class (setup → runTest → teardown) |
 
-`Highlights`
+# `Highlights`
 -------
 
 A. Category: Behavioral
