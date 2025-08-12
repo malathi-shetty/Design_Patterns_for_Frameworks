@@ -1,0 +1,6 @@
+[FileLogger] Test Started: LoginTest
+[FileLogger] Test Finished: LoginTest
+[FileLogger] Test Passed: LoginTest
+[FileLogger] Test Started: SearchTest
+[FileLogger] Test Finished: SearchTest
+[FileLogger] Test Failed: SearchTest
