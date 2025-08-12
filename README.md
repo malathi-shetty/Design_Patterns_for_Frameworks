@@ -4,6 +4,76 @@
 - This project demonstrates Java + Maven implementations of key design patterns tailored for Test Automation.
 - Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
 
+
+### Design Pattern Mapping in SDET Framework
+
+
+                     ┌─────────────────────────┐
+                     │    Test Execution Layer │
+                     └─────────────┬───────────┘
+                                   │
+              ┌────────────────────┴────────────────────┐
+              │                 Test Flow                │
+              │  (Template Method, Strategy, Observer)   │
+              └────────────────────┬────────────────────┘
+                                   │
+            ┌──────────────────────┴──────────────────────┐
+            │             Test Logic Layer                 │
+            │ (Page Object, Facade, Chain of Responsibility│
+            │       Decorator, Data-Driven)                │
+            └──────────────────────┬──────────────────────┘
+                                   │
+            ┌──────────────────────┴──────────────────────┐
+            │         Driver & Utility Layer               │
+            │ (Singleton, Factory Method, Builder)         │
+            └──────────────────────┬──────────────────────┘
+                                   │
+                      ┌────────────┴────────────┐
+                      │  External Data Sources  │
+                      │ (Excel, CSV, DB, APIs)  │
+                      └────────────────────────┘
+
+- Creational = How you make your tools (WebDriver, utilities)
+
+- Structural = How you arrange your code (Page Objects, Facades)
+
+- Behavioral = How the test behaves during execution (flows, strategies, listeners)
+
+- Data-Driven = How your tests get their input data (anywhere it’s needed)
+
+
+| Category | Framework Layer | Selenium/SDET Example Patterns |
+|----------|----------------|---------------------------------|
+| **Creational Patterns** | **Driver & Utility Layer** | - **Singleton** → Single `WebDriver` instance<br>- **Factory** → Browser creation (Chrome, Firefox, etc.)<br>- **Builder** → Test data creation (`UserBuilder`) |
+| **Structural Patterns** | **Test Logic Layer** | - **Page Object Model (POM)** → Page classes for UI<br>- **Facade** → Combine multiple page actions into one method<br>- **Decorator** → Wrap WebElements with logging/timing |
+| **Behavioral Patterns** | **Test Flow Layer** | - **Strategy** → Switch between different flows (e.g., login types)<br>- **Template Method** → Define a test skeleton (before/after steps)<br>- **Observer** → Listeners for reporting, screenshots |
+| **Data-Driven Pattern** | **Cross-cutting** | - Read data from **Excel/CSV/JSON/DB** for tests<br>- Use `@DataProvider` in TestNG<br>- Parameterized tests with different datasets |
+
+---
+
+ 
+- Put **Creational Patterns** in your `driver` or `utils` package.  
+- Put **Structural Patterns** in `pages` or `components`.  
+- Put **Behavioral Patterns** in `flows` or `services`.  
+- Keep **Data-Driven** logic in a `data` or `resources` package, reusable everywhere.
+
+
+
+| Pattern Name              | Definition                                                                 | Selenium Example                                                                |
+|---------------------------|-----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Singleton Pattern         | Ensures only one instance of a class exists globally.                      | `DriverManager.getDriver()` always returns the same `WebDriver` instance across tests.          |
+| Builder Pattern           | Constructs complex objects step-by-step with flexible configuration.       | `User user = new UserBuilder().setName("John").setEmail("john@test.com").build();`               |
+| Factory Method Pattern    | Creates objects without specifying the exact class to instantiate.         | `WebDriver driver = DriverFactory.getDriver("chrome");`                                         |
+| Page Object Pattern       | Encapsulates UI elements and actions in dedicated classes.                  | `LoginPage login = new LoginPage(driver); login.login("user", "pass");`                         |
+| Facade Pattern            | Provides a simplified interface to complex subsystems.                     | `TestHelper.loginAndNavigateToDashboard(driver);`                                               |
+| Decorator Pattern         | Dynamically adds new behaviors to existing objects without altering them.   | `WebDriver driver = new EventFiringWebDriver(new ChromeDriver()); driver.register(new Logger());`|
+| Strategy Pattern          | Defines a family of algorithms and makes them interchangeable.             | `WaitStrategy wait = new ExplicitWaitStrategy(driver); wait.apply(By.id("element"));`           |
+| Observer Pattern          | Allows multiple listeners to react when an event occurs.                    | `TestNG listeners` trigger `onTestFailure()` → capture screenshot & log to report.               |
+| Chain of Responsibility   | Passes a request along a chain of handlers until one processes it.          | Form validation chain: `EmptyFieldCheck → EmailFormatCheck → CaptchaCheck`.                     |
+| Template Method Pattern   | Defines a skeleton of an algorithm, deferring steps to subclasses.          | `BaseTest` has `setup()` & `tearDown()`, subclasses only implement `executeTest()`.              |
+| Data-Driven Pattern       | Executes tests using input data from external sources.                      | `@DataProvider` in TestNG reads Excel & passes multiple username/password sets to one test.      |
+
+
 `Patterns Implemented:`
 ----------
 
