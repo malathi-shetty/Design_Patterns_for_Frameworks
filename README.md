@@ -1,23 +1,30 @@
 # Design_Patterns_for_Frameworks
 
-Overview:
+`Overview:`
 This project demonstrates Java + Maven implementations of key design patterns tailored for SDET and Test Automation.
 Each pattern is applied to real-world testing scenarios — from Selenium UI tests to API automation — ensuring the framework is scalable, reusable, and maintainable.
 
-Patterns Implemented:
-| Category       | Pattern Name            | Example SDET Use Case                             |
-| -------------- | ----------------------- | ------------------------------------------------- |
-| **Creational** | Singleton Pattern       | Centralized WebDriver management                  |
-|                | Builder Pattern         | Flexible test data creation                       |
-|                | Factory Method Pattern  | Cross-browser WebDriver creation                  |
-| **Structural** | Page Object Pattern     | Encapsulating UI interactions                     |
-|                | Facade Pattern          | Simplified high-level test flows                  |
-| **Behavioral** | Strategy Pattern        | Switchable login & verification strategies        |
-|                | Observer Pattern        | Test event logging & reporting                    |
-|                | Chain of Responsibility | Chained validators for UI, API, and preconditions |
-|                | Template Method Pattern | Standardized test flow via base test classes      |
+`Patterns Implemented:`
+----------
 
-Highlights
+# Selenium Design Patterns & Framework Approaches for SDET
+
+| **Category**     | **Pattern / Framework Name** | **Example SDET Use Case** |
+|------------------|-----------------------------|---------------------------|
+| **Creational**   | Singleton Pattern            | Centralized WebDriver management to ensure a single driver instance across tests |
+|                  | Builder Pattern              | Flexible creation of complex test data (e.g., dynamic JSON payloads for API tests) |
+|                  | Factory Method Pattern       | Cross-browser WebDriver creation (Chrome, Firefox, Edge) without changing core test code |
+| **Structural**   | Page Object Pattern          | Encapsulating UI elements and actions for maintainability and reusability |
+|                  | Facade Pattern               | Creating high-level methods that internally call multiple page object methods (e.g., `registerNewUser()`) |
+|                  | Decorator Pattern            | Wrapping WebElement to add extra behaviors like highlighting before click, logging actions, auto-screenshot on failure |
+|                  | Data-Driven Framework        | Externalizing test data (Excel, CSV, JSON) so tests can run for multiple input sets without code changes |
+| **Behavioral**   | Strategy Pattern             | Switching login strategies dynamically (e.g., normal login vs. SSO login) |
+|                  | Observer Pattern             | Implementing test listeners for real-time event logging and reporting (TestNG ITestListener + ExtentReports) |
+|                  | Chain of Responsibility      | Creating chained validators for UI checks, API checks, and DB validation before test execution |
+|                  | Template Method Pattern      | Defining a standard execution flow in a base test class (setup → runTest → teardown) |
+
+`Highlights`
+-------
 
 A. Category: Behavioral
 --------------
