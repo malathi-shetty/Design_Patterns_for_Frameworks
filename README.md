@@ -158,7 +158,7 @@ Example: LoginPage.login(username, password) instead of locating elements in eve
 
 2. Pattern: Data-Driven Framework (Integration)
 
-Definition: Separate test logic from test data
+Definition: Separate test logic from test data so tests remain unchanged when data changes.
 
 Applications:
 
@@ -166,9 +166,9 @@ Applications:
 
 - Externalizing test data (Excel, CSV, JSON, DB)
 
-- Easy parameterization for CI pipelines
+- Easy parameterization for CI pipelines: Running the same UI/API tests with multiple datasets
   
-Example: @DataProvider in TestNG reads from Excel, test executes for each row
+Example: In TestNG, use @DataProvider to read data from Excel, CSV, JSON, or DB. One test method executes multiple times with different input sets.
 
 --------------
 
@@ -201,5 +201,6 @@ Uses:
 - Wrapping multiple report generators behind one call
   
 Example: TestFacade.runFullTest() internally calls UI test, API test, DB verification
+
 --------------
 
